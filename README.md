@@ -63,6 +63,3 @@ We welcome contributions to enhance the game. If you have suggestions for improv
 ## Contact
 
 If you have any questions or feedback, feel free to reach out to me at Omri99Roter@gmail.com
-
-
-שמור את הטקסט הזה בקובץ בשם `README.md` בתיקיית השורש של הפרויקט שלך. הוא יתאר את הפרויקט בצורה מפורטת ומסודרת, ויספק את כל המידע הנדרש למשתמשים ולתורמים פוטנציאליים. אם יש לך צילומי מסך של המשחק, עדכן את המסלולים של התמונות בחלק ה-Screenshots.
