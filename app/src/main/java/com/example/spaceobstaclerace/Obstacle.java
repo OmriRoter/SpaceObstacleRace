@@ -1,11 +1,9 @@
-package com.example.spaceobstaclerace;// Obstacle.java
+package com.example.spaceobstaclerace;
+
 import android.content.Context;
 import android.graphics.Rect;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-
-import com.example.spaceobstaclerace.R;
 
 public class Obstacle {
     private ImageView obstacleImageView;
@@ -26,13 +24,13 @@ public class Obstacle {
         params.addRule(RelativeLayout.ALIGN_PARENT_TOP);
         switch (lane) {
             case 0:
-                params.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
+                params.addRule(RelativeLayout.ALIGN_PARENT_START);
                 break;
             case 1:
                 params.addRule(RelativeLayout.CENTER_HORIZONTAL);
                 break;
             case 2:
-                params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+                params.addRule(RelativeLayout.ALIGN_PARENT_END);
                 break;
         }
         obstacleImageView.setLayoutParams(params);
@@ -48,8 +46,8 @@ public class Obstacle {
         return obstacleImageView;
     }
 
-    public int getLane() {
-        return lane;
+    public boolean isOffScreen(int screenHeight) {
+        return obstacleImageView.getTop() > screenHeight;
     }
 
     public boolean isColliding(ImageView playerImageView) {

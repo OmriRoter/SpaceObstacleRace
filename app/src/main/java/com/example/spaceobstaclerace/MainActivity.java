@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -25,9 +24,8 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageView[] playerImageViews;
+    private Player player;
     private Button leftButton, rightButton, pauseButton;
-    private int currentLane;
     private List<Obstacle> obstacleList;
     private Handler handler;
     private int lives = 3;
@@ -55,11 +53,11 @@ public class MainActivity extends AppCompatActivity {
                 for (Iterator<Obstacle> iterator = obstacleList.iterator(); iterator.hasNext(); ) {
                     Obstacle obstacle = iterator.next();
                     obstacle.move();
-                    if (obstacle.isColliding(playerImageViews[currentLane])) {
+                    if (obstacle.isColliding(player.getCurrentPlayerImageView())) {
                         handleCollision();
                         return;
                     }
-                    if (obstacle.getObstacleImageView().getTop() > getResources().getDisplayMetrics().heightPixels) {
+                    if (obstacle.isOffScreen(getResources().getDisplayMetrics().heightPixels)) {
                         RelativeLayout layout = findViewById(R.id.game_layout);
                         layout.removeView(obstacle.getObstacleImageView());
                         iterator.remove();
@@ -90,29 +88,27 @@ public class MainActivity extends AppCompatActivity {
                 findViewById(R.id.life3)
         };
 
-        playerImageViews = new ImageView[3];
-        playerImageViews[0] = findViewById(R.id.player_left);
-        playerImageViews[1] = findViewById(R.id.player_middle);
-        playerImageViews[2] = findViewById(R.id.player_right);
-
         leftButton = findViewById(R.id.left_button);
         rightButton = findViewById(R.id.right_button);
         pauseButton = findViewById(R.id.pause_button);
 
-        currentLane = 1; // Start in the middle lane (0 = left, 1 = middle, 2 = right)
-        showPlayerInLane(currentLane);
+        player = new Player(new ImageView[]{
+                findViewById(R.id.player_left),
+                findViewById(R.id.player_middle),
+                findViewById(R.id.player_right)
+        });
 
         leftButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                movePlayerToLane(currentLane - 1);
+                player.movePlayerToLane(player.getCurrentLane() - 1);
             }
         });
 
         rightButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                movePlayerToLane(currentLane + 1);
+                player.movePlayerToLane(player.getCurrentLane() + 1);
             }
         });
 
@@ -132,30 +128,6 @@ public class MainActivity extends AppCompatActivity {
 
         handler.post(createObstacleRunnable);
         handler.post(moveObstaclesRunnable);
-    }
-
-    private void movePlayerToLane(int newLane) {
-        if (newLane < 0 || newLane > 2) {
-            return; // Ignore if the new lane is out of bounds
-        }
-
-        ImageView currentPlayerImageView = playerImageViews[currentLane];
-        ImageView newPlayerImageView = playerImageViews[newLane];
-
-        currentPlayerImageView.setVisibility(View.INVISIBLE);
-        newPlayerImageView.setVisibility(View.VISIBLE);
-
-        currentLane = newLane;
-    }
-
-    private void showPlayerInLane(int lane) {
-        for (int i = 0; i < playerImageViews.length; i++) {
-            if (i == lane) {
-                playerImageViews[i].setVisibility(View.VISIBLE);
-            } else {
-                playerImageViews[i].setVisibility(View.INVISIBLE);
-            }
-        }
     }
 
     private void createObstacle() {
@@ -191,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
         if (lives > 0) {
             // Restart the game with remaining lives
             Toast.makeText(this, "Lives remaining: " + lives, Toast.LENGTH_SHORT).show();
-            resetGame();
+            resetGame(false);
         } else {
             // Game over
             Toast.makeText(this, "Game Over! Your score: " + score, Toast.LENGTH_LONG).show();
@@ -199,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void resetGame() {
+    private void resetGame(boolean resetScore) {
         // Remove all obstacles from the game layout and clear the obstacle list
         RelativeLayout layout = findViewById(R.id.game_layout);
         for (Obstacle obstacle : obstacleList) {
@@ -208,8 +180,13 @@ public class MainActivity extends AppCompatActivity {
         obstacleList.clear();
 
         // Reset player position to the middle lane
-        currentLane = 1;
-        showPlayerInLane(currentLane);
+        player.resetPosition();
+
+        // Reset score if specified
+        if (resetScore) {
+            score = 0;
+            scoreTextView.setText("Score: " + score);
+        }
 
         // Restart obstacle creation and movement
         handler.post(createObstacleRunnable);
@@ -223,9 +200,9 @@ public class MainActivity extends AppCompatActivity {
                 .setPositiveButton("Restart", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        // Restart the game with initial lives
+                        // Restart the game with initial lives and reset score
                         lives = 3;
-                        resetGame();
+                        resetGame(true);
                     }
                 })
                 .setNegativeButton("Quit", new DialogInterface.OnClickListener() {
