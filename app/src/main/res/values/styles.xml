@@ -1,0 +1,9 @@
+<resources>
+    <style name="PlayerImageView">
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:layout_above">@id/button_layout</item>
+        <item name="android:layout_marginBottom">20dp</item>
+    </style>
+</resources>

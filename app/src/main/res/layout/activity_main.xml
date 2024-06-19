@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/road"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/road"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:id="@+id/lives_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="10dp">
+
+        <ImageView
+            android:id="@+id/life1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/heart" />
+
+        <ImageView
+            android:id="@+id/life2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/heart" />
+
+        <ImageView
+            android:id="@+id/life3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/heart" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/score_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score: 0"
+        android:textSize="20sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="10dp" />
+
+    <ImageView
+        android:id="@+id/player_left"
+        style="@style/PlayerImageView"
+        android:src="@drawable/player"
+        android:layout_alignParentLeft="true"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/player_middle"
+        style="@style/PlayerImageView"
+        android:src="@drawable/player"
+        android:layout_centerHorizontal="true"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/player_right"
+        style="@style/PlayerImageView"
+        android:src="@drawable/player"
+        android:layout_alignParentRight="true"
+        android:visibility="invisible" />
+
+    <RelativeLayout
+        android:id="@+id/button_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/left_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_arrow_left"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="10dp" />
+
+        <Button
+            android:id="@+id/right_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_arrow_right"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp" />
+
+        <Button
+            android:id="@+id/pause_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pause"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/game_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/button_layout">
+    </RelativeLayout>
+</RelativeLayout>
