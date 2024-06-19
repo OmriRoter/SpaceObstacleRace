@@ -63,10 +63,6 @@ We welcome contributions to enhance the game. If you have suggestions for improv
    ```
 5. Open a pull request.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Contact
 
 If you have any questions or feedback, feel free to reach out to me at Omri99Roter@Gmail.com
