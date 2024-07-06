@@ -1,4 +1,5 @@
-Space Obstacle Race Game
+
+## Space Obstacle Race Game
 
 Welcome to the **Space Obstacle Race Game** repository! This is my first Android app developed, a fun and engaging endless runner game. Navigate your spaceship through an endless array of obstacles in space, dodging asteroids and collecting points along the way. The game includes intuitive controls, vibrant graphics, and a dynamic scoring system to keep you entertained for hours.
 
@@ -11,6 +12,10 @@ Welcome to the **Space Obstacle Race Game** repository! This is my first Android
 - **Collision Detection:** Real-time collision detection with asteroids to make the gameplay challenging.
 - **Lives System:** You start with 3 lives, and each collision with an asteroid reduces a life. The game ends when all lives are lost.
 
+## Screenshots
+
+![WhatsApp Image 2024-06-19 at 10 17 37_8e8e8ffb](https://github.com/OmriRoter/SpaceObstacleRace/assets/131654937/be92c1a1-e038-46fc-aa15-941b312f996a)
+![WhatsApp Image 2024-06-19 at 10 17 37_96153e28](https://github.com/OmriRoter/SpaceObstacleRace/assets/131654937/dd4896db-9197-4eef-a57d-0a8f47d0e3da)
 
 ## Getting Started
 
@@ -58,8 +63,6 @@ We welcome contributions to enhance the game. If you have suggestions for improv
    ```
 5. Open a pull request.
 
-
-
 ## Contact
 
-If you have any questions or feedback, feel free to reach out to me at Omri99Roter@gmail.com
+If you have any questions or feedback, feel free to reach out to me at Omri99Roter@Gmail.com
