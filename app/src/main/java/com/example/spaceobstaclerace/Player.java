@@ -9,7 +9,7 @@ public class Player {
 
     public Player(ImageView[] playerImageViews) {
         this.playerImageViews = playerImageViews;
-        this.currentLane = 1; // Start in the middle lane (0 = left, 1 = middle, 2 = right)
+        this.currentLane = 1;
         showPlayerInLane(currentLane);
     }
 
@@ -23,7 +23,7 @@ public class Player {
 
     public void movePlayerToLane(int newLane) {
         if (newLane < 0 || newLane > 2) {
-            return; // Ignore if the new lane is out of bounds
+            return;
         }
 
         ImageView currentPlayerImageView = playerImageViews[currentLane];
@@ -36,7 +36,7 @@ public class Player {
     }
 
     public void resetPosition() {
-        movePlayerToLane(1); // Reset to the middle lane
+        movePlayerToLane(1);
     }
 
     private void showPlayerInLane(int lane) {
