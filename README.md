@@ -1,21 +1,35 @@
+# Space Obstacle Race Game
 
-## Space Obstacle Race Game
-
-Welcome to the **Space Obstacle Race Game** repository! This is my first Android app developed, a fun and engaging endless runner game. Navigate your spaceship through an endless array of obstacles in space, dodging asteroids and collecting points along the way. The game includes intuitive controls, vibrant graphics, and a dynamic scoring system to keep you entertained for hours.
+Welcome to the **Space Obstacle Race Game** repository! This Android app is an exciting endless runner game set in space. Navigate your spaceship through an array of obstacles, dodge asteroids, collect coins, and aim for the highest score. With multiple game modes and a high score system, this game offers hours of entertainment.
 
 ## Features
 
+- **Multiple Game Modes:** 
+  - Button Mode (Slow): Classic gameplay with standard speed.
+  - Button Mode (Fast): Increased difficulty with faster obstacles.
+  - Sensor Mode: Control your spaceship by tilting your device.
+
 - **Endless Gameplay:** The game continues as long as you have lives left, providing endless fun.
-- **Dynamic Scoring:** Your score accumulates throughout all attempts, even after losing lives, so you can always aim for a higher score.
-- **Simple Controls:** Easily move your spaceship left or right using arrow buttons on the screen.
-- **Pause Functionality:** Pause and resume the game at any time without losing your progress.
-- **Collision Detection:** Real-time collision detection with asteroids to make the gameplay challenging.
-- **Lives System:** You start with 3 lives, and each collision with an asteroid reduces a life. The game ends when all lives are lost.
+
+- **Dynamic Scoring:** Your score accumulates throughout all attempts, even after losing lives.
+
+- **Coin Collection:** Collect coins during gameplay to boost your score.
+
+- **Lives System:** Start with 3 lives, losing one with each asteroid collision. The game ends when all lives are lost.
+
+- **Pause Functionality:** Pause and resume the game at any time without losing progress.
+
+- **High Score System:** Save your best scores and compare them with other players.
+
+- **Location-based High Scores:** View high scores on a map to see where top players are located.
+
+- **Sound Effects:** Enjoy immersive audio feedback for collisions and coin collection.
+
+- **Vibration Feedback:** Feel the impact of collisions with haptic feedback.
 
 ## Screenshots
 
-![WhatsApp Image 2024-06-19 at 10 17 37_8e8e8ffb](https://github.com/OmriRoter/SpaceObstacleRace/assets/131654937/be92c1a1-e038-46fc-aa15-941b312f996a)
-![WhatsApp Image 2024-06-19 at 10 17 37_96153e28](https://github.com/OmriRoter/SpaceObstacleRace/assets/131654937/dd4896db-9197-4eef-a57d-0a8f47d0e3da)
+[Insert updated screenshots here]
 
 ## Getting Started
 
@@ -26,7 +40,7 @@ To get a copy of the project up and running on your local machine for developmen
    git clone https://github.com/your-username/space-obstacle-race-game.git
    ```
 2. **Open the project in Android Studio.**
-3. **Build and run the project on an emulator or physical device.**
+3. **Build and run the project on an emulator or physical device.
 
 ## Prerequisites
 
@@ -35,18 +49,24 @@ To get a copy of the project up and running on your local machine for developmen
 
 ## How to Play
 
-- **Start the Game:** The game begins automatically when you launch the app.
-- **Move Left:** Tap the left arrow button to move the spaceship to the left lane.
-- **Move Right:** Tap the right arrow button to move the spaceship to the right lane.
-- **Pause/Resume:** Tap the pause button to pause or resume the game.
+1. **Start the Game:** Launch the app and choose your preferred game mode from the menu.
+2. **Button Mode:**
+   - Tap the left arrow button to move the spaceship to the left.
+   - Tap the right arrow button to move the spaceship to the right.
+3. **Sensor Mode:**
+   - Tilt your device left or right to move the spaceship.
+4. **Collect Coins:** Navigate your spaceship to collect coins and increase your score.
+5. **Avoid Asteroids:** Dodge the incoming asteroids to prevent losing lives.
+6. **Pause/Resume:** Tap the pause button to pause or resume the game.
+7. **View High Scores:** Check the high score board to see how you rank against other players.
 
-## First Android App
+## Development Journey
 
-This is my first Android app developed! I have learned a lot during the development process, and I am excited to share it with you. Any feedback or suggestions are greatly appreciated as I continue to improve my skills.
+This project represents a significant milestone in my Android development journey. I've expanded on my initial app, incorporating more advanced features and improving the overall user experience. I've learned a lot about game development, sensor integration, and working with location services.
 
 ## Contributing
 
-We welcome contributions to enhance the game. If you have suggestions for improvements, feel free to fork the repository and submit a pull request. Here’s how you can contribute:
+We welcome contributions to enhance the game. If you have suggestions for improvements, feel free to fork the repository and submit a pull request. Here's how you can contribute:
 
 1. Fork the repository.
 2. Create a new branch for your feature or bugfix.
@@ -66,3 +86,4 @@ We welcome contributions to enhance the game. If you have suggestions for improv
 ## Contact
 
 If you have any questions or feedback, feel free to reach out to me at Omri99Roter@Gmail.com
+
