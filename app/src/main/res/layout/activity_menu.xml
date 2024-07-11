@@ -3,18 +3,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:padding="16dp">
 
-    <Button
-        android:id="@+id/button_control_button"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button Control" />
+        android:text="Space Obstacle Race"
+        android:textSize="24sp"
+        android:layout_marginBottom="32dp"/>
 
     <Button
-        android:id="@+id/sensor_control_button"
-        android:layout_width="wrap_content"
+        android:id="@+id/button_mode_slow"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Sensor Control" />
+        android:text="Button Mode - Slow"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/button_mode_fast"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Button Mode - Fast"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/sensor_mode"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Sensor Mode"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/high_scores_button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="High Scores"/>
 
 </LinearLayout>
