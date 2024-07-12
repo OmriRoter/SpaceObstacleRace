@@ -44,7 +44,11 @@ Welcome to the **Space Obstacle Race Game** repository! This Android app is an e
 
 ## Screenshots
 
-[Insert updated screenshots here, including the new menu, five-lane road, and high score screen]
+![IMG-20240712-WA0008 1](https://github.com/user-attachments/assets/6a3c4519-9816-42b1-a60e-0307e9817d50)
+![IMG-20240712-WA0009 1](https://github.com/user-attachments/assets/5406b44f-cb7b-42b2-ac43-877b552455b0)
+![IMG-20240712-WA0010 1](https://github.com/user-attachments/assets/5602b5f1-7989-48e4-a2c2-d50e39fbb84a)
+
+
 
 ## Getting Started
 
